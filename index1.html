@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+ <label>numero 1:<input type="text" placeholder="1234345" id="numero1"></label>
+ <div> <label>numero 2:<input type="text" placeholder="1223345" id="numero2"></label></div>
+   <button onclick="calculadora('multiplica')">multiplica</button>
+    <button onclick="calculadora('suma')">suma</button>
+     <button onclick="calculadora('resta')">resta</button>
+      <button onclick="calculadora('divide')">divide</button>
+    <div id="display"></div>
+   
+   
+   
+   
+   
+   <script>
+        function calculadora(operacion) {
+            let input1 = document.getElementById('numero1');
+            let input2 = document.getElementById('numero2');
+            let display = document.getElementById('display');
+                
+            let a = Number(input1.value);
+            let b = Number(input2.value);
+            let resultado;
+            
+            if(operacion == 'suma'){
+                resultado = a + b;
+            }else if(operacion == 'resta'){
+                resultado = a - b;
+            }else if(operacion == 'multiplica'){
+                resultado = multiplica(a,b);
+            }else if(operacion == 'divide'){
+                resultado = a / b;
+            }
+
+            
+            display.innerHTML = resultado;
+
+        }
+
+    
+        function multiplica(n1, n2) {
+            
+
+            let resultado=0;
+            for (let i = 1; i <= n2; i++) {
+                resultado = resultado + n1;
+            }
+            
+            
+            
+            return resultado;
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
